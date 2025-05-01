@@ -1,7 +1,7 @@
 import { NativeScriptConfig } from '@nativescript/core';
 
 export default {
-  id: 'org.nativescript.MyVideoDownloader',
+  id: 'wida.myvideodownloader',
   appPath: 'app',
   appResourcesPath: 'App_Resources',
   android: {
