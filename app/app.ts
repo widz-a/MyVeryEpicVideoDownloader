@@ -4,7 +4,7 @@ You can use this file to perform app-level initialization, but the primary
 purpose of the file is to pass control to the app’s first module.
 */
 
-import { Application, Http, Utils } from '@nativescript/core'
+import { Application, Utils } from '@nativescript/core'
 import { knownFolders, path } from '@nativescript/core/file-system';
 
 Application.run({ moduleName: 'app-root' })
