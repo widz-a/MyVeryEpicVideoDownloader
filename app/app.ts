@@ -14,9 +14,6 @@ Do not place any code after the application has been started as it will not
 be executed on iOS.
 */
 
-export const ENDPOINT = "https://cobalt.wida.dev"
-export const API_KEY = "9156bc59-548a-42b1-93a1-b5827eb64608"
-
 export async function getDownloadURL(url: string): Promise<Response> {
     const request = await fetch(ENDPOINT, {
         method: "POST",
