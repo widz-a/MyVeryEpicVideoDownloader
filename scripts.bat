@@ -1,34 +1,41 @@
 @echo off
 title Some NS Shits
-color 0A
 
 :MENU
 cls
 echo ==========================
 echo     Choose an Option
 echo ==========================
-echo 1. Run NativeScript App (Android)
-echo 2. Clean Project
-echo 3. Generate Icons
-echo 4. Exit
+echo 1. Preview NativeScript App
+echo 2. Run Project (Android)
+echo 3. Build Project (Android)
+echo 4. Generate Icons
+echo 5. Exit
 echo ==========================
 set /p choice=Enter your choice (1-4): 
 
-if "%choice%"=="1" goto RUN
-if "%choice%"=="2" goto CLEAN
-if "%choice%"=="3" goto ICONS
-if "%choice%"=="4" exit
+if "%choice%"=="1" goto PREVIEW
+if "%choice%"=="2" goto RUN
+if "%choice%"=="3" goto BUILD
+if "%choice%"=="4" goto ICONS
+if "%choice%"=="5" exit
+goto MENU
+
+:PREVIEW
+echo Running app preview...
+ns preview
+pause
 goto MENU
 
 :RUN
 echo Running app...
-ns run android
+ns run android --bundle --env.uglify --env.aot --env.snapshot
 pause
 goto MENU
 
-:CLEAN
-echo Cleaning project...
-ns clean
+:BUILD
+echo Building project...
+ns build android --bundle --env.uglify --env.aot --env.snapshot
 pause
 goto MENU
 
